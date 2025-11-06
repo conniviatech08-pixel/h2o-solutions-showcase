@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.webp";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,10 +18,19 @@ const Header = () => {
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
-    { to: "/products", label: "Products" },
     { to: "/why-choose-us", label: "Why Choose Us" },
     { to: "/networks", label: "Our Network" },
     { to: "/contact", label: "Contact Us" },
+  ];
+
+  const productItems = [
+    { to: "/products/water-treatment", label: "Water Treatment Plants" },
+    { to: "/products/sewage-treatment", label: "Sewage Treatment Plants" },
+    { to: "/products/effluent-treatment", label: "Effluent Treatment Plants" },
+    { to: "/products/pressure-sand-filter", label: "Pressure Sand Filters" },
+    { to: "/products/swimming-pool", label: "Swimming Pool Filters" },
+    { to: "/products/organic-composter", label: "Organic Waste Composters" },
+    { to: "/products/water-softening", label: "Water Softening Plants" },
   ];
 
   return (
@@ -29,7 +46,42 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6">
-          {navItems.map((item) => (
+          {navItems.slice(0, 2).map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              activeClassName="text-primary"
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium">Products</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {productItems.map((item) => (
+                      <li key={item.to}>
+                        <NavigationMenuLink asChild>
+                          <NavLink
+                            to={item.to}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                          </NavLink>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {navItems.slice(2).map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
