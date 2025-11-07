@@ -111,7 +111,36 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden border-t bg-background">
           <div className="container py-4 flex flex-col gap-4">
-            {navItems.map((item) => (
+            {navItems.slice(0, 2).map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className="text-sm font-medium text-muted-foreground py-2"
+                activeClassName="text-primary"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            
+            <div className="border-t pt-2">
+              <div className="text-sm font-medium text-muted-foreground mb-2">Products</div>
+              <div className="pl-4 flex flex-col gap-2">
+                {productItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className="text-sm text-muted-foreground py-1"
+                    activeClassName="text-primary"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+            
+            {navItems.slice(2).map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}

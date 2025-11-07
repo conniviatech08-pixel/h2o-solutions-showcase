@@ -92,7 +92,7 @@ const Home = () => {
               <Button asChild size="lg" variant="secondary" className="text-lg">
                 <NavLink to="/products">View Products</NavLink>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" className="text-lg gradient-secondary">
                 <NavLink to="/enquiry">Get Quote</NavLink>
               </Button>
             </div>
