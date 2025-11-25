@@ -8,26 +8,32 @@ const WaterTreatment = () => {
   const products = [
     {
       title: "500 LPH Water Treatment Plant",
-      price: "Rs 1,60,000",
+      price: "Rs 1,60,000 / Piece",
+      description: "A 500 LPH Water Treatment Plant refers to a system designed to treat 500 Liters of water per hour. The type and components of the plant depend on the water source and the end-use (drinking, industrial, etc.).",
       specs: [
         { label: "Capacity", value: "500 LPH" },
         { label: "Water Source", value: "Borewell Water" },
+        { label: "Type", value: "Pharmaceutical Industry" },
         { label: "Treatment Technique", value: "Membrane Bioreactor (MBR)" },
         { label: "Automation", value: "Fully Automatic" },
         { label: "Voltage", value: "240V" },
         { label: "Frequency", value: "50 Hz" },
+        { label: "Air Blower Power", value: "0.75 KW" },
       ],
     },
     {
       title: "100 LPH Water Treatment Plant",
-      price: "Rs 95,000",
+      price: "Rs 95,000 / Piece",
+      description: "LPH in a Water Treatment Plant stands for Litres Per Hour. This plant refers to the capacity of treating 100 litres of water in one hour, suitable for pharmaceutical and industrial applications.",
       specs: [
         { label: "Capacity", value: "100 LPH" },
         { label: "Water Source", value: "Borewell Water" },
         { label: "Application", value: "Pharmaceutical Industry" },
         { label: "Treatment Technique", value: "Membrane Bioreactor (MBR)" },
         { label: "Automation", value: "Fully Automatic" },
-        { label: "Power", value: "0.5 KW" },
+        { label: "Voltage", value: "240V" },
+        { label: "Frequency", value: "50 Hz" },
+        { label: "Air Blower Power", value: "0.5 KW" },
       ],
     },
   ];
@@ -63,7 +69,7 @@ const WaterTreatment = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Water Treatment Plants</h1>
             <p className="text-lg text-primary-foreground/90">
-              Complete water treatment systems for residential, commercial, and industrial applications. Designed to remove impurities and ensure safe, clean drinking water.
+              Our comprehensive range of water treatment plants includes systems designed to treat water from various sources including borewell water. We offer advanced membrane bioreactor (MBR) technology for pharmaceutical, industrial, and commercial applications with capacities ranging from 100 LPH to 500 LPH and beyond.
             </p>
           </div>
         </div>
@@ -114,6 +120,7 @@ const WaterTreatment = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                   <div className="space-y-3 mb-6">
                     {product.specs.map((spec, idx) => (
                       <div key={idx} className="flex justify-between items-center py-2 border-b">

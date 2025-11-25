@@ -8,9 +8,10 @@ const WaterSoftening = () => {
   const products = [
     {
       title: "100 LPH Water Softening Plant",
-      price: "Rs 60,000",
+      price: "Rs 60,000 / Piece",
+      description: "A water softener reduces the dissolved calcium, magnesium, and to some degree manganese and ferrous iron ion concentration in hard water. Ideal for industrial applications using borewell water sources.",
       specs: [
-        { label: "Capacity", value: "100 LPH" },
+        { label: "Capacity (LPH)", value: "100 LPH" },
         { label: "Usage/Application", value: "Industrial" },
         { label: "Automation", value: "Automatic" },
         { label: "Water Source", value: "Borewell Water" },
@@ -22,7 +23,8 @@ const WaterSoftening = () => {
     },
     {
       title: "200 LPH Water Softening Plant",
-      price: "Rs 1,60,000",
+      price: "Rs 1,60,000 / Piece",
+      description: "A water softening plant is a facility to remove calcium and magnesium ions from hard water to make it softer. This high-capacity system is designed for industrial applications requiring consistent soft water supply.",
       specs: [
         { label: "Capacity", value: "200 LPH" },
         { label: "Usage/Application", value: "Industrial" },
@@ -118,6 +120,7 @@ const WaterSoftening = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                   <div className="space-y-3 mb-6">
                     {product.specs.map((spec, idx) => (
                       <div key={idx} className="flex justify-between items-center py-2 border-b">

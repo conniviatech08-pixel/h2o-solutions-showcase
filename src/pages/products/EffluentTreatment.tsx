@@ -8,27 +8,35 @@ const EffluentTreatment = () => {
   const products = [
     {
       title: "Wastewater Effluent Treatment Plant",
-      price: "Rs 5,90,000",
+      price: "Rs 5,90,000 / Piece",
       capacity: "1 MLD (1000 KLD)",
+      description: "An Effluent Treatment Plant (ETP) or Waste Water Treatment Plant (WWTP) is a unit plant where various physical, biological and chemical processes are used to change the properties of the waste water by removing harmful substances in order to turn it into a type of water that can be safely discharged into the environment.",
       specs: [
         { label: "Capacity", value: "1 MLD (1000 KLD)" },
+        { label: "Capacity (KLD)", value: "1000 KLD" },
         { label: "Industry Type", value: "Hospital" },
-        { label: "Application", value: "Pharmaceutical & Chemical" },
+        { label: "Industry / Application", value: "Pharmaceutical & Chemical" },
         { label: "Installation Type", value: "Prefabricated" },
-        { label: "Material", value: "Mild Steel" },
-        { label: "Tertiary Treatment", value: "Pressure Sand Filter (PSF)" },
+        { label: "Material of Construction", value: "Mild Steel" },
+        { label: "Tertiary Treatment System", value: "Pressure Sand Filter (PSF)" },
+        { label: "Country of Origin", value: "Made in India" },
+        { label: "Production Capacity", value: "1 MLD" },
+        { label: "Delivery Time", value: "30 Days" },
       ],
     },
     {
       title: "Custom-Built Effluent Treatment Plant",
-      price: "Rs 1,60,000",
+      price: "Rs 1,60,000 / Unit",
       capacity: "10 - 30 KLD",
+      description: "Customized effluent treatment plant designed for hospital, healthcare, and food industry applications. Features activated sludge process for efficient treatment of industrial wastewater.",
       specs: [
-        { label: "Capacity", value: "10 - 30 KLD" },
-        { label: "Application", value: "Hospital & Healthcare, Food Industry" },
-        { label: "Technology", value: "Activated Sludge Process (ASP)" },
+        { label: "Capacity", value: "10 KLD" },
+        { label: "Capacity (KLD)", value: "30 KLD" },
+        { label: "Industry / Application", value: "Hospital & Healthcare" },
+        { label: "Treatment Technology", value: "Activated Sludge Process (ASP)" },
+        { label: "Application Industry", value: "Food Industry" },
         { label: "Installation Type", value: "Prefabricated" },
-        { label: "Inlet Flow Rate", value: "50 m3/day" },
+        { label: "Inlet Flow Rate", value: "50 m3/day or m3/hr" },
       ],
     },
   ];
@@ -75,7 +83,7 @@ const EffluentTreatment = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Effluent Treatment Plants (ETP)</h1>
             <p className="text-lg text-primary-foreground/90">
-              Industrial effluent treatment systems designed to treat industrial wastewater from various industries including textile, pharmaceutical, chemical, and food processing.
+              Leading manufacturer of wastewater effluent treatment plants, custom-built systems, compact plants, biological treatment facilities, and zero liquid discharge effluent treatment plants. Our ETPs are designed to treat industrial wastewater from textile, pharmaceutical, chemical, food processing, hospital, healthcare, automobile, paper, pulp, and leather industries.
             </p>
           </div>
         </div>
@@ -126,6 +134,7 @@ const EffluentTreatment = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                   <div className="space-y-3 mb-6">
                     {product.specs.map((spec, idx) => (
                       <div key={idx} className="flex justify-between items-start py-2 border-b">

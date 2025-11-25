@@ -8,7 +8,8 @@ const PressureSandFilter = () => {
   const products = [
     {
       title: "200 Kg Pressure Sand Filter",
-      price: "Rs 80,000",
+      price: "Rs 80,000 / Piece",
+      description: "A 200 Kg Pressure Sand Filter refers to a pressure sand filter unit that contains approximately 200 kilograms of sand media inside its vessel for filtration. This high-capacity filter is designed for industrial applications requiring efficient removal of suspended particles.",
       specs: [
         { label: "Flow Rate", value: "1000 m3/hr" },
         { label: "Usage/Application", value: "Industrial" },
@@ -22,7 +23,8 @@ const PressureSandFilter = () => {
     },
     {
       title: "100 Kg Pressure Sand Filter",
-      price: "Rs 50,000",
+      price: "Rs 50,000 / Piece",
+      description: "Our Pipeless Swimming Pool Filters provide a compact, plug-and-play solution to traditional pool filtration systems. Crafted with high-grade mild steel (100kg unit weight), this robust system is ideal for both residential and commercial swimming pools.",
       specs: [
         { label: "Flow Rate", value: "500 m3/hr" },
         { label: "Usage/Application", value: "Industrial" },
@@ -118,6 +120,7 @@ const PressureSandFilter = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                   <div className="space-y-3 mb-6">
                     {product.specs.map((spec, idx) => (
                       <div key={idx} className="flex justify-between items-center py-2 border-b">
