@@ -8,8 +8,9 @@ const OrganicComposter = () => {
   const products = [
     {
       title: "Mild Steel Green Organic Waste Composter",
-      price: "Rs 80,000",
+      price: "Rs 80,000 / Piece",
       capacity: "100 kg",
+      description: "Require complete manual operation without any automation. Features manual turning for aeration and moisture management. Best for small households, backyard composting, and garden enthusiasts.",
       specs: [
         { label: "Capacity", value: "100 kg" },
         { label: "Material", value: "Mild Steel" },
@@ -22,8 +23,9 @@ const OrganicComposter = () => {
     },
     {
       title: "Mild Steel Organic Waste Composter",
-      price: "Rs 1,35,000",
+      price: "Rs 1,35,000 / Piece",
       capacity: "250 kg",
+      description: "High-capacity semi-automatic organic waste composter with powder-coated mild steel construction. Designed for medium to large-scale composting operations with enhanced durability and efficiency.",
       specs: [
         { label: "Capacity", value: "250 kg" },
         { label: "Material", value: "Mild Steel" },
@@ -118,6 +120,7 @@ const OrganicComposter = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                   <div className="space-y-3 mb-6">
                     {product.specs.map((spec, idx) => (
                       <div key={idx} className="flex justify-between items-center py-2 border-b">

@@ -8,7 +8,8 @@ const SwimmingPool = () => {
   const products = [
     {
       title: "Swimming Pool Sand Filter",
-      price: "Rs 2,00,000",
+      price: "Rs 2,00,000 / Piece",
+      description: "A swimming pool sand filter is a tank filled with sand that removes debris and contaminants from pool water. The sand traps particles larger than 2 microns in size, allowing clean water to flow back into the pool.",
       specs: [
         { label: "Type", value: "Side Mount" },
         { label: "Usage/Application", value: "Commercial" },
@@ -19,23 +20,38 @@ const SwimmingPool = () => {
     },
     {
       title: "Swimming Pool Filtration Systems",
-      price: "Rs 20,000",
+      price: "Rs 20,000 / Piece",
+      description: "Our pipeless swimming pool filters offer an innovative and compact filtration solution. This system eliminates the need for conventional piping, providing efficient filtration for clean and crystal-clear pool water with space-saving design and simplified installation.",
       specs: [
         { label: "Usage/Application", value: "Commercial" },
         { label: "Material", value: "Plastic" },
         { label: "Brand", value: "Emaux" },
-        { label: "Type", value: "Pipeless System" },
       ],
     },
     {
-      title: "50 Kg Mild Steel Swimming Pool Filter",
-      price: "Rs 30,000",
+      title: "50 Kg Mild Steel Swimming Pool Filtration Plant",
+      price: "Rs 30,000 / Piece",
+      description: "Compact filtration plant designed for swimming pools. Ensures water quality by maintaining optimal chlorine and pH levels through efficient sand filtration.",
       specs: [
         { label: "Flow Rate", value: "100 m3/hour" },
+        { label: "Used to Treat", value: "Swimming Pool" },
+        { label: "Usage/Application", value: "Water treatment for pH & Chlorine" },
         { label: "Sand Weight", value: "50 Kg" },
         { label: "Material", value: "Mild Steel" },
-        { label: "Valve Connection", value: "1.5 Inch" },
-        { label: "Application", value: "Water Treatment" },
+        { label: "Valve Connection Size", value: "1.5 Inch" },
+      ],
+    },
+    {
+      title: "Swimming Pool Filtration System",
+      price: "Rs 2,00,000 / Unit",
+      description: "Swimming pool filtration is essential for maintaining clean, safe, and clear water. It involves removing debris, contaminants, and microorganisms from the pool to ensure a healthy swimming environment.",
+      specs: [
+        { label: "Usage/Application", value: "Filtration" },
+        { label: "Material", value: "Mild Steel" },
+        { label: "Voltage", value: "240 V" },
+        { label: "Power", value: "22 HP" },
+        { label: "Capacity", value: "10000 L" },
+        { label: "Country of Origin", value: "Made in India" },
       ],
     },
   ];
@@ -122,6 +138,7 @@ const SwimmingPool = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                   <div className="space-y-3 mb-6">
                     {product.specs.map((spec, idx) => (
                       <div key={idx} className="flex justify-between items-center py-2 border-b">
