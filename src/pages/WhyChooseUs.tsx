@@ -1,5 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { NavLink } from "@/components/NavLink";
 import { CheckCircle2, Award, Users, Wrench, Shield, TrendingUp, HeartHandshake, Leaf } from "lucide-react";
+import qualityAssurance from "@/assets/quality-assurance.webp";
+import teamWorking from "@/assets/team-working.webp";
+import ecoPlant from "@/assets/eco-plant.webp";
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -66,11 +71,19 @@ const WhyChooseUs = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 gradient-hero text-primary-foreground">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Why Choose Bharat H2O?</h1>
+      {/* Hero Section with Image */}
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${teamWorking})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+        <div className="container relative z-10">
+          <div className="max-w-2xl">
+            <span className="inline-block px-4 py-2 bg-secondary/20 backdrop-blur-sm rounded-full text-secondary text-sm font-medium mb-4">
+              Why Bharat H2O
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">Why Choose Bharat H2O?</h1>
             <p className="text-lg text-primary-foreground/90">
               Discover what makes us the preferred choice for water treatment solutions across India
             </p>
@@ -79,16 +92,20 @@ const WhyChooseUs = () => {
       </section>
 
       {/* Main Reasons */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
+          <div className="text-center mb-12">
+            <span className="text-secondary font-semibold">Our Strengths</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">What Sets Us Apart</h2>
+          </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {reasons.map((reason, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-colors">
+              <Card key={index} className="border-2 hover:border-primary transition-all hover:shadow-lg group">
                 <CardHeader>
-                  <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
+                  <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <reason.icon className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{reason.title}</CardTitle>
+                  <CardTitle className="text-lg">{reason.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm">{reason.description}</p>
@@ -99,38 +116,74 @@ const WhyChooseUs = () => {
         </div>
       </section>
 
-      {/* Additional Advantages */}
+      {/* Quality Image Section */}
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Additional Advantages</h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {advantages.map((advantage, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">{advantage}</p>
-                </div>
-              ))}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src={qualityAssurance} 
+                alt="Quality testing in laboratory" 
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </div>
+            <div className="space-y-6">
+              <span className="text-secondary font-semibold">Quality First</span>
+              <h2 className="text-3xl md:text-4xl font-bold">Additional Advantages</h2>
+              <div className="space-y-4">
+                {advantages.map((advantage, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-background rounded-lg p-4 shadow-sm">
+                    <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-0.5" />
+                    <p className="text-foreground">{advantage}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Commitment Section */}
-      <section className="py-16 md:py-24">
+      {/* Sustainability Section */}
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Our Commitment</h2>
-            <p className="text-lg text-muted-foreground">
-              At Bharat H2O Solutions, we are committed to delivering excellence in every project. Our goal is not just
-              to provide equipment, but to build long-term partnerships with our clients. We stand by our products and
-              services, ensuring that you receive the best value for your investment.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              When you choose us, you're choosing a partner who cares about your success and is dedicated to providing
-              sustainable water treatment solutions that make a real difference.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <span className="text-secondary font-semibold">Sustainability</span>
+              <h2 className="text-3xl md:text-4xl font-bold">Our Commitment</h2>
+              <p className="text-lg text-muted-foreground">
+                At Bharat H2O Solutions, we are committed to delivering excellence in every project. Our goal is not just
+                to provide equipment, but to build long-term partnerships with our clients. We stand by our products and
+                services, ensuring that you receive the best value for your investment.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                When you choose us, you're choosing a partner who cares about your success and is dedicated to providing
+                sustainable water treatment solutions that make a real difference.
+              </p>
+              <Button asChild className="gradient-primary">
+                <NavLink to="/enquiry">Get Started Today</NavLink>
+              </Button>
+            </div>
+            <div className="order-1 lg:order-2">
+              <img 
+                src={ecoPlant} 
+                alt="Eco-friendly water treatment" 
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 gradient-secondary text-secondary-foreground">
+        <div className="container text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Experience the Difference?</h2>
+          <p className="text-lg mb-8 text-secondary-foreground/90 max-w-2xl mx-auto">
+            Join hundreds of satisfied clients who trust Bharat H2O for their water treatment needs.
+          </p>
+          <Button asChild size="lg" variant="outline" className="border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
+            <NavLink to="/contact">Contact Our Team</NavLink>
+          </Button>
         </div>
       </section>
     </div>
