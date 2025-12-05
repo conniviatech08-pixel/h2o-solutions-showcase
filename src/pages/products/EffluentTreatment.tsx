@@ -1,51 +1,26 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
+
 import effluentTreatment from "@/assets/effluent-treatment.webp";
+import custombuild from "@/assets/custombuild.webp";
+import bgwater from "@/assets/Effluentbg.webp"; // add your banner bg image
+
 import { Factory, Recycle, Shield, Settings } from "lucide-react";
 
 const EffluentTreatment = () => {
-  const products = [
-    {
-      title: "Wastewater Effluent Treatment Plant",
-      price: "Rs 5,90,000 / Piece",
-      capacity: "1 MLD (1000 KLD)",
-      description: "An Effluent Treatment Plant (ETP) or Waste Water Treatment Plant (WWTP) is a unit plant where various physical, biological and chemical processes are used to change the properties of the waste water by removing harmful substances in order to turn it into a type of water that can be safely discharged into the environment.",
-      specs: [
-        { label: "Capacity", value: "1 MLD (1000 KLD)" },
-        { label: "Capacity (KLD)", value: "1000 KLD" },
-        { label: "Industry Type", value: "Hospital" },
-        { label: "Industry / Application", value: "Pharmaceutical & Chemical" },
-        { label: "Installation Type", value: "Prefabricated" },
-        { label: "Material of Construction", value: "Mild Steel" },
-        { label: "Tertiary Treatment System", value: "Pressure Sand Filter (PSF)" },
-        { label: "Country of Origin", value: "Made in India" },
-        { label: "Production Capacity", value: "1 MLD" },
-        { label: "Delivery Time", value: "30 Days" },
-      ],
-    },
-    {
-      title: "Custom-Built Effluent Treatment Plant",
-      price: "Rs 1,60,000 / Unit",
-      capacity: "10 - 30 KLD",
-      description: "Customized effluent treatment plant designed for hospital, healthcare, and food industry applications. Features activated sludge process for efficient treatment of industrial wastewater.",
-      specs: [
-        { label: "Capacity", value: "10 KLD" },
-        { label: "Capacity (KLD)", value: "30 KLD" },
-        { label: "Industry / Application", value: "Hospital & Healthcare" },
-        { label: "Treatment Technology", value: "Activated Sludge Process (ASP)" },
-        { label: "Application Industry", value: "Food Industry" },
-        { label: "Installation Type", value: "Prefabricated" },
-        { label: "Inlet Flow Rate", value: "50 m3/day or m3/hr" },
-      ],
-    },
-  ];
-
   const features = [
     {
       icon: Factory,
       title: "Industrial Grade",
-      description: "Designed for various industrial applications and requirements",
+      description:
+        "Designed for various industrial applications and requirements",
     },
     {
       icon: Recycle,
@@ -77,20 +52,26 @@ const EffluentTreatment = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 gradient-hero text-primary-foreground">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Effluent Treatment Plants (ETP)</h1>
-            <p className="text-lg text-primary-foreground/90">
-              Leading manufacturer of wastewater effluent treatment plants, custom-built systems, compact plants, biological treatment facilities, and zero liquid discharge effluent treatment plants. Our ETPs are designed to treat industrial wastewater from textile, pharmaceutical, chemical, food processing, hospital, healthcare, automobile, paper, pulp, and leather industries.
-            </p>
-          </div>
+      {/* HERO SECTION WITH FULL BG IMAGE */}
+      <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white">
+        <img
+          src={bgwater}
+          alt="Effluent Treatment"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg">
+            Effluent Treatment Plants (ETP)
+          </h1>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-10 md:py-14 bg-background">
         <div className="container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
@@ -108,59 +89,93 @@ const EffluentTreatment = () => {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our ETP Solutions</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Customized effluent treatment plants for diverse industrial applications
-            </p>
+      {/* FIRST BLOCK */}
+      <section className="py-10 md:py-14 bg-muted/30">
+        <div className="container mx-auto  px-6 md:px-12 lg:px-20 space-y-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="w-full h-full">
+              <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src={effluentTreatment}
+                  alt="200 LPH Water Softening Plant"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Wastewater Effluent Treatment Plant
+              </h2>
+
+              <p className="text-lg text-muted-foreground">
+                An Effluent Treatment Plant (ETP) or Waste Water Treatment Plant (WWTP) is a unit plant where various physical, biological and chemical processes are used to change the properties of the waste water by removing harmful substances in order to turn it into a type of water that can be safely discharged into the..
+              </p>
+
+              <ul className="space-y-2 text-muted-foreground">
+                <li>Prevents scale buildup in pipes & equipment</li>
+                <li>Reduces maintenance & increases equipment life</li>
+                <li>Improves boiler & cooling tower efficiency</li>
+              </ul>
+
+              <Button asChild className="gradient-primary py-2 px-6 mt-3">
+                <NavLink to="/enquiry" className="text-white font-semibold">
+                  Enquiry Now
+                </NavLink>
+              </Button>
+            </div>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            {products.map((product, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={effluentTreatment}
-                    alt={product.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{product.title}</CardTitle>
-                  <CardDescription className="text-xl font-semibold text-primary">
-                    {product.price}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
-                  <div className="space-y-3 mb-6">
-                    {product.specs.map((spec, idx) => (
-                      <div key={idx} className="flex justify-between items-start py-2 border-b">
-                        <span className="text-sm font-medium text-muted-foreground">{spec.label}</span>
-                        <span className="text-sm font-semibold text-right">{spec.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full gradient-primary">
-                    <NavLink to="/enquiry">Request Quote</NavLink>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+
+          {/* SECOND BLOCK */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Packaged Effluent Treatment Plant
+              </h2>
+
+              <p className="text-lg text-muted-foreground">
+               Complete treatment systems that come as a single package, often pre-fabricated, ready for on-site installation.
+              </p>
+
+              <ul className="space-y-2 text-muted-foreground">
+                <li>Integrates all necessary treatment stages.</li>
+                <li>Suitable for sites with limited space.</li>
+                <li>User-friendly controls and low maintenance.</li>
+                <li>Removes large solids and debris.</li>
+              </ul>
+
+              <Button asChild className="gradient-primary py-2 px-6 mt-3">
+                <NavLink to="/enquiry" className="text-white font-semibold">
+                  Enquiry Now
+                </NavLink>
+              </Button>
+            </div>
+
+            <div className="w-full h-full">
+              <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src={custombuild}
+                  alt="100 LPH Water Softening Plant"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Industries Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-10 md:py-14">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Industries We Serve</h2>
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Industries We Serve</h2>
+
+            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
               {industries.map((industry, index) => (
-                <Card key={index}>
+                <Card
+                  key={index}
+                  className="border shadow-sm p-4 rounded-xl hover:shadow-md transition-all"
+                >
                   <CardHeader>
                     <CardTitle className="text-base">{industry}</CardTitle>
                   </CardHeader>
@@ -171,49 +186,56 @@ const EffluentTreatment = () => {
         </div>
       </section>
 
-      {/* Treatment Process Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      {/* Treatment Process */}
+      <section className="py-10 md:py-14 bg-muted/40">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Treatment Stages</h2>
-            <div className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Primary Treatment</CardTitle>
-                  <CardDescription>
-                    Physical removal of suspended solids through screening and sedimentation
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Secondary Treatment</CardTitle>
-                  <CardDescription>
-                    Biological treatment using activated sludge process or MBBR technology
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Tertiary Treatment</CardTitle>
-                  <CardDescription>
-                    Advanced filtration and chemical treatment for final polishing
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Treatment Stages</h2>
+
+            <div className="space-y-5">
+              {[
+                {
+                  title: "Primary Treatment",
+                  desc: "Physical removal of suspended solids",
+                },
+                {
+                  title: "Secondary Treatment",
+                  desc: "Biological treatment using MBBR or activated sludge",
+                },
+                {
+                  title: "Tertiary Treatment",
+                  desc: "Advanced chemical & filtration treatment",
+                },
+              ].map((item, i) => (
+                <Card key={i} className="border p-6 rounded-xl shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-lg font-semibold">
+                      {item.title}
+                    </CardTitle>
+                    <CardDescription>{item.desc}</CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-secondary text-secondary-foreground">
+      <section className="py-12 md:py-16 gradient-secondary text-secondary-foreground">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Industrial Effluent Treatment?</h2>
-          <p className="text-lg mb-8 text-secondary-foreground/90 max-w-2xl mx-auto">
-            Get a customized ETP solution designed specifically for your industry. Our experts will help you meet all compliance requirements.
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            Need Industrial Effluent Treatment?
+          </h2>
+          <p className="text-lg mb-5 text-secondary-foreground/90 max-w-2xl mx-auto">
+            Get a customized ETP solution tailored for your industry.
           </p>
-          <Button asChild size="lg" variant="secondary">
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-white text-green-600 border border-green-600 hover:bg-green-600 hover:text-white"
+          >
             <NavLink to="/contact">Contact Our Experts</NavLink>
           </Button>
         </div>

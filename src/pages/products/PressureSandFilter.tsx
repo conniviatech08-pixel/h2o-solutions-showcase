@@ -1,53 +1,30 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import pressureSandFilter from "@/assets/pressure-sand-filter.webp";
+import PressureSand1 from "@/assets/pressuresand1.webp";
+import PressureSand2 from "@/assets/pressure-sand-filters2.webp";
 import { Filter, Droplets, Settings, Award } from "lucide-react";
+import pressurebg from "@/assets/pressuresand.jpg";
 
 const PressureSandFilter = () => {
-  const products = [
-    {
-      title: "200 Kg Pressure Sand Filter",
-      price: "Rs 80,000 / Piece",
-      description: "A 200 Kg Pressure Sand Filter refers to a pressure sand filter unit that contains approximately 200 kilograms of sand media inside its vessel for filtration. This high-capacity filter is designed for industrial applications requiring efficient removal of suspended particles.",
-      specs: [
-        { label: "Flow Rate", value: "1000 m3/hr" },
-        { label: "Usage/Application", value: "Industrial" },
-        { label: "Media Quantity", value: "200kg" },
-        { label: "Vessel Diameter", value: "400 mm" },
-        { label: "Vessel Height", value: "800 mm" },
-        { label: "Finishing", value: "Powder Coated" },
-        { label: "Automation", value: "Automatic" },
-        { label: "Body Material", value: "Mild Steel" },
-      ],
-    },
-    {
-      title: "100 Kg Pressure Sand Filter",
-      price: "Rs 50,000 / Piece",
-      description: "Our Pipeless Swimming Pool Filters provide a compact, plug-and-play solution to traditional pool filtration systems. Crafted with high-grade mild steel (100kg unit weight), this robust system is ideal for both residential and commercial swimming pools.",
-      specs: [
-        { label: "Flow Rate", value: "500 m3/hr" },
-        { label: "Usage/Application", value: "Industrial" },
-        { label: "Media Quantity", value: "100kg" },
-        { label: "Vessel Diameter", value: "200 mm" },
-        { label: "Vessel Height", value: "500 mm" },
-        { label: "Finishing", value: "Powder Coated" },
-        { label: "Automation", value: "Automatic" },
-        { label: "Body Material", value: "Mild Steel" },
-      ],
-    },
-  ];
-
   const features = [
     {
       icon: Filter,
       title: "High Efficiency",
-      description: "Removes suspended solids, turbidity, and impurities effectively",
+      description:
+        "Removes suspended solids, turbidity, and impurities effectively",
     },
     {
       icon: Droplets,
       title: "Multi-Grade Media",
-      description: "Uses multiple layers of filtration media for superior results",
+      description:
+        "Uses multiple layers of filtration media for superior results",
     },
     {
       icon: Settings,
@@ -63,26 +40,38 @@ const PressureSandFilter = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 gradient-hero text-primary-foreground">
+      {/* HERO SECTION */}
+      <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={pressurebg}
+            alt="Water Treatment"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Remove blur – optional very light overlay */}
+          <div className="absolute inset-0 bg-black/10"></div>
+        </div>
+
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Pressure Sand Filters</h1>
-            <p className="text-lg text-primary-foreground/90">
-              High-efficiency pressure sand filters for removing suspended solids, turbidity, and impurities from water. Ideal for pre-treatment in water treatment systems.
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              Pressure Sand Filters
+            </h1>
+            <p className="text-lg text-white/90">
+              Our product range includes a wide range of 200 kg pressure sand filter and 100 kg pressure sand filters.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container">
+      {/* FEATURES */}
+      <section className="py-10 md:py-14 bg-background">
+        <div className="container ">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <Card key={index} className="text-center">
                 <CardHeader>
-                  <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-4 mx-auto">
+                  <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-3 mx-auto">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
@@ -94,75 +83,126 @@ const PressureSandFilter = () => {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Pressure Sand Filters</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Available in FRP/MS construction with various capacities
-            </p>
+      {/* PRODUCTS */}
+      <section className="py-10 md:py-14 bg-muted/50">
+        <div className="container mx-auto  px-6 md:px-12 lg:px-20 space-y-12">
+          {/* FIRST BLOCK */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="w-full h-full">
+              <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src={PressureSand1}
+                  alt="Pressure Sand Filter"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-black">
+                200 Kg Pressure Sand Filter
+              </h2>
+
+              <p className="text-lg text-muted-foreground">
+                A 200 Kg Pressure Sand Filter contains 200 kg of sand media for
+                filtration. Here's how it works.
+              </p>
+
+              <div className="space-y-2">
+                <p className="text-muted-foreground">
+                  Automated Mixing Process.
+                </p>
+                <p className="text-muted-foreground">
+                  Reduces contaminants and odors effectively.
+                </p>
+                <p className="text-muted-foreground">
+                  Provides proper aeration.
+                </p>
+                <p className="text-muted-foreground">
+                  Some models include shredders.
+                </p>
+              </div>
+
+              <Button asChild className="gradient-primary py-2 px-6 mt-2">
+                <NavLink to="/enquiry" className="text-white font-semibold">
+                  Enquiry Now
+                </NavLink>
+              </Button>
+            </div>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            {products.map((product, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={pressureSandFilter}
-                    alt={product.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{product.title}</CardTitle>
-                  <CardDescription className="text-xl font-semibold text-primary">
-                    {product.price}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
-                  <div className="space-y-3 mb-6">
-                    {product.specs.map((spec, idx) => (
-                      <div key={idx} className="flex justify-between items-center py-2 border-b">
-                        <span className="text-sm font-medium text-muted-foreground">{spec.label}</span>
-                        <span className="text-sm font-semibold">{spec.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full gradient-primary">
-                    <NavLink to="/enquiry">Request Quote</NavLink>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+
+          {/* SECOND BLOCK */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-black">
+                100 Kg Pressure Sand Filters
+              </h2>
+
+              <p className="text-lg text-muted-foreground">
+                Our compact 100 Kg pressure sand filters are suitable for
+                residential & commercial pools.
+              </p>
+
+              <div className="space-y-2">
+                <p className="text-muted-foreground">
+                  Manual aeration required.
+                </p>
+                <p className="text-muted-foreground">Simple & user-friendly.</p>
+                <p className="text-muted-foreground">
+                  Requires moisture control.
+                </p>
+                <p className="text-muted-foreground">Full process control.</p>
+              </div>
+
+              <Button asChild className="gradient-primary py-2 px-6 mt-2">
+                <NavLink to="/enquiry" className="text-white font-semibold">
+                  Enquiry Now
+                </NavLink>
+              </Button>
+            </div>
+
+            <div className="w-full h-full">
+              <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src={PressureSand2}
+                  alt="Pressure Sand Filter"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-16 md:py-24">
+      {/* HOW IT WORKS */}
+      <section className="py-10 md:py-14">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">How It Works</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              How It Works
+            </h2>
             <Card>
               <CardHeader>
                 <CardTitle>Filtration Process</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3">
                 <p className="text-muted-foreground">
-                  Water enters the pressure vessel from the top and flows downward through multiple layers of graded sand media. As water passes through the sand bed, suspended particles are trapped while clean water flows out through the bottom collector system.
+                  Water flows downward through a graded sand bed. Suspended
+                  particles get trapped while clean water exits from the bottom.
                 </p>
-                <div className="grid gap-4 sm:grid-cols-2 mt-6">
+
+                <div className="grid gap-4 sm:grid-cols-2 mt-4">
                   <div className="p-4 bg-muted rounded-lg">
-                    <h4 className="font-semibold mb-2">Filtration Cycle</h4>
+                    <h4 className="font-semibold mb-1">Filtration Cycle</h4>
                     <p className="text-sm text-muted-foreground">
-                      Continuous operation with high flow rates and efficient particle removal
+                      Continuous operation with efficient removal.
                     </p>
                   </div>
+
                   <div className="p-4 bg-muted rounded-lg">
-                    <h4 className="font-semibold mb-2">Backwash Cycle</h4>
+                    <h4 className="font-semibold mb-1">Backwash Cycle</h4>
                     <p className="text-sm text-muted-foreground">
-                      Automatic backwash cleans the media by reversing water flow
+                      Reverse flow cleans the media thoroughly.
                     </p>
                   </div>
                 </div>
@@ -172,34 +212,41 @@ const PressureSandFilter = () => {
         </div>
       </section>
 
-      {/* Applications Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      {/* APPLICATIONS */}
+      <section className="py-10 md:py-14 bg-muted/50">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Applications</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              Applications
+            </h2>
             <div className="grid gap-4 sm:grid-cols-2">
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Pre-Treatment</CardTitle>
-                  <CardDescription>For RO plants and other water treatment systems</CardDescription>
+                  <CardDescription>
+                    For RO plants & water treatment
+                  </CardDescription>
                 </CardHeader>
               </Card>
+
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Industrial Water</CardTitle>
-                  <CardDescription>Process water treatment for various industries</CardDescription>
+                  <CardDescription>For industrial applications</CardDescription>
                 </CardHeader>
               </Card>
+
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Cooling Towers</CardTitle>
-                  <CardDescription>Removes suspended particles from cooling water</CardDescription>
+                  <CardDescription>Removes suspended solids</CardDescription>
                 </CardHeader>
               </Card>
+
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Swimming Pools</CardTitle>
-                  <CardDescription>Maintains crystal clear pool water quality</CardDescription>
+                  <CardDescription>Keeps water crystal clear</CardDescription>
                 </CardHeader>
               </Card>
             </div>
@@ -207,14 +254,22 @@ const PressureSandFilter = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-secondary text-secondary-foreground">
+      {/* CTA */}
+      <section className="py-12 md:py-16 gradient-secondary text-secondary-foreground">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Custom Filtration Solution?</h2>
-          <p className="text-lg mb-8 text-secondary-foreground/90 max-w-2xl mx-auto">
-            We provide pressure sand filters in various sizes and configurations. Contact us for a customized solution.
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            Need Custom Filtration Solution?
+          </h2>
+          <p className="text-lg mb-6 text-secondary-foreground/90 max-w-2xl mx-auto">
+            We provide pressure sand filters in various sizes and custom
+            options.
           </p>
-          <Button asChild size="lg" variant="secondary">
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-white text-green-600 border border-green-600 hover:bg-green-600 hover:text-white"
+          >
             <NavLink to="/contact">Contact Our Experts</NavLink>
           </Button>
         </div>

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import {
   NavigationMenu,
@@ -14,6 +14,19 @@ import {
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // 👉 STOP BACKGROUND SCROLL WHEN MOBILE MENU IS OPEN
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden"; // lock scroll
+    } else {
+      document.body.style.overflow = "auto"; // unlock scroll
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"; // cleanup
+    };
+  }, [mobileMenuOpen]);
 
   const navItems = [
     { to: "/", label: "Home" },
@@ -56,11 +69,14 @@ const Header = () => {
               {item.label}
             </NavLink>
           ))}
-          
+
+          {/* Products Dropdown */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">Products</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-sm font-medium">
+                  Products
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                     {productItems.map((item) => (
@@ -68,9 +84,9 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to={item.to}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none">{item.label}</div>
+                            <div className="text-sm font-medium">{item.label}</div>
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
@@ -91,6 +107,7 @@ const Header = () => {
               {item.label}
             </NavLink>
           ))}
+
           <Button asChild className="gradient-hero">
             <NavLink to="/enquiry">Enquiry Now</NavLink>
           </Button>
@@ -110,7 +127,7 @@ const Header = () => {
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t bg-background">
-          <div className="container py-4 flex flex-col gap-4">
+          <div className="container py-4 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
             {navItems.slice(0, 2).map((item) => (
               <NavLink
                 key={item.to}
@@ -122,9 +139,12 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
-            
+
+            {/* Products */}
             <div className="border-t pt-2">
-              <div className="text-sm font-medium text-muted-foreground mb-2">Products</div>
+              <div className="text-sm font-medium text-muted-foreground mb-2">
+                Products
+              </div>
               <div className="pl-4 flex flex-col gap-2">
                 {productItems.map((item) => (
                   <NavLink
@@ -139,7 +159,7 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            
+
             {navItems.slice(2).map((item) => (
               <NavLink
                 key={item.to}
@@ -151,6 +171,7 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
+
             <Button asChild className="gradient-hero w-full">
               <NavLink to="/enquiry" onClick={() => setMobileMenuOpen(false)}>
                 Enquiry Now

@@ -1,8 +1,15 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/NavLink";
 import { ArrowRight } from "lucide-react";
-import pressureSandFilter from "@/assets/pressure-sand-filter.webp";
+import { useNavigate } from "react-router-dom";
+
+import pressureSandFilter from "@/assets/pressuresand1.webp";
 import swimmingPoolFilter from "@/assets/swimming-pool-filter.webp";
 import waterTreatmentPlant from "@/assets/water-treatment-plant.webp";
 import organicComposter from "@/assets/organic-composter.webp";
@@ -11,22 +18,29 @@ import sewageTreatment from "@/assets/sewage-treatment.webp";
 import heroWater from "@/assets/hero-water.webp";
 
 const Products = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       image: waterTreatmentPlant,
       title: "Water Treatment Plants",
       description:
-        "Complete water treatment systems for residential, commercial, and industrial applications. Designed to remove impurities and ensure safe, clean drinking water.",
-      features: ["Capacity: 500 LPH to 50,000 LPH", "Automated operation", "Compact design", "Energy efficient"],
+        "Complete water treatment systems for residential, commercial, and industrial applications.",
+      features: [
+        "Capacity: 500 LPH to 50,000 LPH",
+        "Automated operation",
+        "Compact design",
+        "Energy efficient",
+      ],
       link: "/products/water-treatment",
     },
     {
       image: sewageTreatment,
       title: "Sewage Treatment Plants (STP)",
       description:
-        "Advanced sewage treatment solutions for residential complexes, hotels, hospitals, and commercial establishments. Treats wastewater to meet discharge standards.",
+        "Advanced sewage treatment solutions that meet discharge standards.",
       features: [
-        "Modular & compact design",
+        "Modular & compact",
         "Low operational cost",
         "Minimal maintenance",
         "Eco-friendly process",
@@ -37,11 +51,11 @@ const Products = () => {
       image: effluentTreatment,
       title: "Effluent Treatment Plants (ETP)",
       description:
-        "Industrial effluent treatment systems designed to treat industrial wastewater from various industries including textile, pharmaceutical, chemical, and food processing.",
+        "Industrial wastewater treatment system for textile, pharma, chemical, food industries.",
       features: [
         "Customized solutions",
-        "Meets pollution control norms",
-        "Zero liquid discharge options",
+        "Pollution control compliant",
+        "ZLD options",
         "Advanced automation",
       ],
       link: "/products/effluent-treatment",
@@ -50,11 +64,11 @@ const Products = () => {
       image: pressureSandFilter,
       title: "Pressure Sand Filters",
       description:
-        "High-efficiency pressure sand filters for removing suspended solids, turbidity, and impurities from water. Ideal for pre-treatment in water treatment systems.",
+        "High-efficiency sand filters for removing turbidity and suspended solids.",
       features: [
-        "FRP/MS construction",
+        "FRP/MS body",
         "Multi-grade media",
-        "Easy backwash system",
+        "Easy backwash",
         "Long service life",
       ],
       link: "/products/pressure-sand-filter",
@@ -63,11 +77,11 @@ const Products = () => {
       image: swimmingPoolFilter,
       title: "Swimming Pool Filters",
       description:
-        "Premium quality swimming pool filtration systems to keep pool water crystal clear and hygienic. Complete pool equipment and maintenance solutions.",
+        "Premium filters to keep swimming pools clean and hygienic.",
       features: [
         "Sand & cartridge filters",
-        "Pool pumps & accessories",
-        "Chemical dosing systems",
+        "Pool pumps",
+        "Chemical dosing",
         "UV disinfection",
       ],
       link: "/products/swimming-pool",
@@ -76,11 +90,11 @@ const Products = () => {
       image: organicComposter,
       title: "Organic Waste Composters",
       description:
-        "Fully automatic organic waste composters for converting food waste and organic matter into compost. Ideal for hotels, restaurants, residential complexes, and institutions.",
+        "Fully automatic machines converting organic waste into compost.",
       features: [
-        "Fully automatic operation",
+        "Automatic operation",
         "Odorless process",
-        "90% volume reduction",
+        "90% reduction",
         "24-hour cycle",
       ],
       link: "/products/organic-composter",
@@ -89,74 +103,106 @@ const Products = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section with Background Image */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div 
+
+      {/* ---------------- HERO SECTION ---------------- */}
+      <section className="relative py-24 md:py-28 overflow-hidden">
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroWater})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
-        <div className="container relative z-10">
+        <div className="absolute inset-0 bg-primary/85" />
+
+        <div className="container relative z-10 px-6 md:px-10">
           <div className="max-w-2xl">
-            <span className="inline-block px-4 py-2 bg-secondary/20 backdrop-blur-sm rounded-full text-secondary text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 bg-white/20 rounded-full text-white text-sm mb-4">
               Our Products
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">Our Products & Solutions</h1>
-            <p className="text-lg text-primary-foreground/90">
-              Comprehensive range of water and wastewater treatment equipment for all your needs
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Our Products & Solutions
+            </h1>
+            <p className="text-lg text-white/90">
+              Complete range of water & wastewater treatment equipment.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-secondary font-semibold">Explore</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Complete Product Range</h2>
+      {/* ---------------- PRODUCTS SECTION ---------------- */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container px-4 md:px-10">
+
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <span className="text-secondary font-semibold uppercase">
+              Explore
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
+              Complete Product Range
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From water treatment to waste management, we offer end-to-end solutions for all your requirements
+              Water treatment, wastewater treatment & waste management products.
             </p>
           </div>
-          <div className="space-y-8">
-            {products.map((product, index) => (
-              <Card key={index} className="overflow-hidden border-2 hover:border-primary transition-all hover:shadow-xl group">
-                <div className={`grid md:grid-cols-2 gap-0 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className={`aspect-video md:aspect-auto overflow-hidden bg-muted ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+
+          {/* Cards */}
+          <div className="space-y-10">
+            {products.map((p, i) => (
+              <Card
+                key={i}
+                className="relative overflow-hidden border bg-white rounded-2xl shadow-sm 
+                hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="grid md:grid-cols-2 gap-8 items-center px-6 md:px-10 py-8">
+
+                  {/* ---- IMAGE SMALL + CLEAN ---- */}
+                  <div className="flex justify-center">
                     <img
-                      src={product.image}
-                      alt={product.title}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={p.image}
+                      alt={p.title}
+                      className="rounded-xl w-[70%] md:w-[60%] object-cover 
+                      transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                   </div>
-                  <div className={`p-6 md:p-8 flex flex-col justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+
+                  {/* ---- CONTENT ---- */}
+                  <div>
                     <CardHeader className="p-0 mb-4">
-                      <CardTitle className="text-2xl group-hover:text-primary transition-colors">{product.title}</CardTitle>
-                      <CardDescription className="text-base mt-2">{product.description}</CardDescription>
+                      <CardTitle className="text-2xl font-bold group-hover:text-primary transition">
+                        {p.title}
+                      </CardTitle>
+                      <CardDescription className="text-base mt-2 text-muted-foreground">
+                        {p.description}
+                      </CardDescription>
                     </CardHeader>
+
                     <CardContent className="p-0">
-                      <h4 className="font-semibold mb-3 text-primary">Key Features:</h4>
+                      <h4 className="font-semibold mb-3 text-primary text-lg">
+                        Key Features:
+                      </h4>
                       <ul className="space-y-2 mb-6">
-                        {product.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="text-secondary mt-0.5">✓</span>
-                            {feature}
+                        {p.features.map((f, idx) => (
+                          <li key={idx} className="flex gap-2 text-sm text-muted-foreground">
+                            <span className="text-secondary font-semibold">✓</span>
+                            {f}
                           </li>
                         ))}
                       </ul>
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <Button asChild className="gradient-primary">
-                          <NavLink to={product.link} className="flex items-center gap-2">
-                            View Details <ArrowRight className="h-4 w-4" />
-                          </NavLink>
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button
+                          onClick={() => navigate(p.link)}
+                          className="gradient-primary shadow-md flex items-center gap-2"
+                        >
+                          View Details <ArrowRight className="h-4 w-4" />
                         </Button>
-                        <Button asChild variant="outline">
-                          <NavLink to="/enquiry">Get Quote</NavLink>
+
+                        <Button variant="outline" onClick={() => navigate("/enquiry")}>
+                          Get Quote
                         </Button>
                       </div>
                     </CardContent>
                   </div>
+
                 </div>
               </Card>
             ))}
@@ -164,54 +210,6 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Additional Products Banner */}
-      <section className="py-12 bg-muted/50">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-2 hover:border-primary transition-all">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Water Softening Plants</h3>
-                <p className="text-muted-foreground mb-4">
-                  Ion exchange based systems for removing hardness from water, ideal for industrial and commercial applications.
-                </p>
-                <Button asChild variant="outline" size="sm">
-                  <NavLink to="/products/water-softening">Learn More</NavLink>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="border-2 hover:border-primary transition-all">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Custom Solutions</h3>
-                <p className="text-muted-foreground mb-4">
-                  Need a specialized solution? We design and manufacture custom water treatment systems based on your requirements.
-                </p>
-                <Button asChild variant="outline" size="sm">
-                  <NavLink to="/contact">Contact Us</NavLink>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-secondary text-secondary-foreground">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need a Custom Solution?</h2>
-          <p className="text-lg text-secondary-foreground/90 mb-8 max-w-2xl mx-auto">
-            We can design and manufacture customized water treatment systems based on your specific requirements.
-            Contact us for a detailed consultation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="outline" className="border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
-              <NavLink to="/contact">Contact Our Experts</NavLink>
-            </Button>
-            <Button asChild size="lg" className="bg-white text-secondary hover:bg-white/90">
-              <NavLink to="/enquiry">Request Quote</NavLink>
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

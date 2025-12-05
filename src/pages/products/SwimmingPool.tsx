@@ -1,61 +1,20 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import swimmingPoolFilter from "@/assets/swimming-pool-filter.webp";
+
+import swimmingpool1 from "@/assets/swimmingpool1.webp";
+import swimmingpool2 from "@/assets/swimmimgpool2.webp";
+import bgwater from "@/assets/swimmingbg.jpg";
+
 import { Waves, Sparkles, Shield, Settings } from "lucide-react";
 
 const SwimmingPool = () => {
-  const products = [
-    {
-      title: "Swimming Pool Sand Filter",
-      price: "Rs 2,00,000 / Piece",
-      description: "A swimming pool sand filter is a tank filled with sand that removes debris and contaminants from pool water. The sand traps particles larger than 2 microns in size, allowing clean water to flow back into the pool.",
-      specs: [
-        { label: "Type", value: "Side Mount" },
-        { label: "Usage/Application", value: "Commercial" },
-        { label: "Material", value: "Mild Steel" },
-        { label: "Brand", value: "Emaux" },
-        { label: "Country of Origin", value: "Made in India" },
-      ],
-    },
-    {
-      title: "Swimming Pool Filtration Systems",
-      price: "Rs 20,000 / Piece",
-      description: "Our pipeless swimming pool filters offer an innovative and compact filtration solution. This system eliminates the need for conventional piping, providing efficient filtration for clean and crystal-clear pool water with space-saving design and simplified installation.",
-      specs: [
-        { label: "Usage/Application", value: "Commercial" },
-        { label: "Material", value: "Plastic" },
-        { label: "Brand", value: "Emaux" },
-      ],
-    },
-    {
-      title: "50 Kg Mild Steel Swimming Pool Filtration Plant",
-      price: "Rs 30,000 / Piece",
-      description: "Compact filtration plant designed for swimming pools. Ensures water quality by maintaining optimal chlorine and pH levels through efficient sand filtration.",
-      specs: [
-        { label: "Flow Rate", value: "100 m3/hour" },
-        { label: "Used to Treat", value: "Swimming Pool" },
-        { label: "Usage/Application", value: "Water treatment for pH & Chlorine" },
-        { label: "Sand Weight", value: "50 Kg" },
-        { label: "Material", value: "Mild Steel" },
-        { label: "Valve Connection Size", value: "1.5 Inch" },
-      ],
-    },
-    {
-      title: "Swimming Pool Filtration System",
-      price: "Rs 2,00,000 / Unit",
-      description: "Swimming pool filtration is essential for maintaining clean, safe, and clear water. It involves removing debris, contaminants, and microorganisms from the pool to ensure a healthy swimming environment.",
-      specs: [
-        { label: "Usage/Application", value: "Filtration" },
-        { label: "Material", value: "Mild Steel" },
-        { label: "Voltage", value: "240 V" },
-        { label: "Power", value: "22 HP" },
-        { label: "Capacity", value: "10000 L" },
-        { label: "Country of Origin", value: "Made in India" },
-      ],
-    },
-  ];
-
   const features = [
     {
       icon: Waves,
@@ -81,24 +40,33 @@ const SwimmingPool = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 gradient-hero text-primary-foreground">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Swimming Pool Filters</h1>
-            <p className="text-lg text-primary-foreground/90">
-              Premium quality swimming pool filtration systems to keep pool water crystal clear and hygienic. Complete pool equipment and maintenance solutions.
-            </p>
-          </div>
+      {/* HERO SECTION WITH BACKGROUND IMAGE */}
+      <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={bgwater}
+            alt="Swimming Pool"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0"></div>
+        </div>
+
+        <div className="container text-center px-4 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Swimming Pool Filters
+          </h1>
+          <p className="text-lg max-w-2xl mx-auto text-white/90">
+            Offering you a complete choice of products which include swimming pool sand filter, swimming pool filtration systems, 50 kg mild steel swimming pool filtration plant and 100 kg mild steel swimming pool filtration plant.
+          </p>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* FEATURES */}
+      <section className="py-10 md:py-14 bg-background">
         <div className="container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
+            {features.map((feature, idx) => (
+              <Card key={idx} className="text-center">
                 <CardHeader>
                   <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-4 mx-auto">
                     <feature.icon className="h-6 w-6 text-white" />
@@ -112,145 +80,173 @@ const SwimmingPool = () => {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Pool Filtration Systems</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Sand & cartridge filters for residential and commercial pools
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {products.map((product, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={swimmingPoolFilter}
-                    alt={product.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{product.title}</CardTitle>
-                  <CardDescription className="text-lg font-semibold text-primary">
-                    {product.price}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
-                  <div className="space-y-3 mb-6">
-                    {product.specs.map((spec, idx) => (
-                      <div key={idx} className="flex justify-between items-center py-2 border-b">
-                        <span className="text-sm font-medium text-muted-foreground">{spec.label}</span>
-                        <span className="text-sm font-semibold">{spec.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full gradient-primary">
-                    <NavLink to="/enquiry">Request Quote</NavLink>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* PRODUCT SECTION */}
+      <section className="py-10 md:py-14 bg-muted/50">
+        <div className="container mx-auto  px-6 md:px-12 lg:px-20 space-y-16">
+          {/* FIRST BLOCK */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="w-full">
+              <div className="w-full h-72 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src={swimmingpool1}
+                  alt="200 LPH"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-      {/* System Components Section */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Complete Pool System</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Sand & Cartridge Filters</CardTitle>
-                  <CardDescription>
-                    Multiple filtration options to suit your pool size and budget
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Pool Pumps</CardTitle>
-                  <CardDescription>
-                    Energy-efficient pumps for optimal water circulation
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Chemical Dosing Systems</CardTitle>
-                  <CardDescription>
-                    Automated chlorine and pH control systems
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">UV Disinfection</CardTitle>
-                  <CardDescription>
-                    Advanced UV systems for superior water sanitization
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold text-black">
+                100 Kg Mild Steel Swimming Pool Filtration Plant
+              </h2>
+
+              <p className="text-muted-foreground">
+                Bharat H2O Solutions, our Pipeless Swimming Pool Filters provide a compact, plug-and-play solution to traditional pool filtration systems. Crafted with high-grade mild steel (100kg unit weight), this robust system is ideal for both residential and commercial swimming pools.
+              </p>
+
+              <ul className="space-y-1 text-muted-foreground">
+                <li>Prevents scale buildup in pipes and boilers.</li>
+                <li>Lowers maintenance and increases equipment life.</li>
+                <li>Improves heating efficiency and water quality.</li>
+              </ul>
+
+              <Button asChild className="gradient-primary py-2 px-6 mt-3">
+                <NavLink to="/enquiry">Enquiry Now</NavLink>
+              </Button>
+            </div>
+          </div>
+
+          {/* SECOND BLOCK */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold text-black">
+                Swimming Pool Filtration Systems
+              </h2>
+
+              <p className="text-muted-foreground">
+               Bharat H2O Solutions,our pipeless swimmming pool filters offer an innovative and compact filteration solution.This system eliminates the need for conventional piping,providing efficient filteration for clean and crystal-clear pool water.With space saving design & simplified installation.
+              </p>
+
+              <ul className="space-y-1 text-muted-foreground">
+                <li>Prevents scale and mineral deposits.</li>
+                <li>Improves water taste and performance.</li>
+                <li>Ideal for small restaurants, homes & offices.</li>
+              </ul>
+
+              <Button asChild className="gradient-primary py-2 px-6 mt-3">
+                <NavLink to="/enquiry">Enquiry Now</NavLink>
+              </Button>
+            </div>
+
+            <div className="w-full">
+              <div className="w-full h-72 md:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src={swimmingpool2}
+                  alt="100 LPH"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why Choose Our Systems?</h2>
-            <div className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Superior Filtration</CardTitle>
-                  <CardDescription>
-                    Removes particles as small as 2 microns for crystal clear water
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Low Maintenance</CardTitle>
-                  <CardDescription>
-                    Easy backwash operation and minimal upkeep required
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Energy Efficient</CardTitle>
-                  <CardDescription>
-                    Variable speed pumps reduce energy consumption by up to 70%
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Complete Support</CardTitle>
-                  <CardDescription>
-                    Installation, maintenance, and AMC services available
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
+      {/* SYSTEM COMPONENTS */}
+      <section className="py-10 md:py-14">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center">
+            Complete Pool System
+          </h2>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Sand & Cartridge Filters</CardTitle>
+                <CardDescription>Options for all pool sizes.</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Pool Pumps</CardTitle>
+                <CardDescription>
+                  Energy-efficient water circulation.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Chemical Dosing</CardTitle>
+                <CardDescription>
+                  Automated chlorine & pH control.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>UV Disinfection</CardTitle>
+                <CardDescription>
+                  Advanced sanitization technology.
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-secondary text-secondary-foreground">
+      {/* BENEFITS */}
+      <section className="py-10 md:py-14 bg-muted/50">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center">
+            Why Choose Our Systems?
+          </h2>
+
+          <div className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Superior Filtration</CardTitle>
+                <CardDescription>
+                  Removes particles as small as 2 microns.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Low Maintenance</CardTitle>
+                <CardDescription>
+                  Easy backwash & minimal upkeep.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Energy Efficient</CardTitle>
+                <CardDescription>Saves up to 70% energy.</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Complete Support</CardTitle>
+                <CardDescription>Installation & AMC available.</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-10 md:py-14 gradient-secondary text-white">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Pool Filtration Solution?</h2>
-          <p className="text-lg mb-8 text-secondary-foreground/90 max-w-2xl mx-auto">
-            Get expert advice on the best pool filtration system for your needs. We provide complete installation and maintenance services.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Need Pool Filtration Solution?
+          </h2>
+          <p className="text-lg mb-6 max-w-xl mx-auto text-white/90">
+            Get expert advice and installation across all pool types.
           </p>
-          <Button asChild size="lg" variant="secondary">
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-white text-green-600 border border-green-600 hover:bg-green-600 hover:text-white"
+          >
             <NavLink to="/contact">Contact Our Experts</NavLink>
           </Button>
         </div>

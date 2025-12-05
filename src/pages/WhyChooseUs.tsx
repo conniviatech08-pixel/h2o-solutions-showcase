@@ -1,10 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { CheckCircle2, Award, Users, Wrench, Shield, TrendingUp, HeartHandshake, Leaf } from "lucide-react";
+import {
+  CheckCircle2,
+  Award,
+  Users,
+  Wrench,
+  Shield,
+  TrendingUp,
+  HeartHandshake,
+  Leaf,
+} from "lucide-react";
+
 import qualityAssurance from "@/assets/quality-assurance.webp";
 import teamWorking from "@/assets/team-working.webp";
-import ecoPlant from "@/assets/eco-plant.webp";
+import ecoPlant from "@/assets/whychoose1.jpg";
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -12,103 +22,116 @@ const WhyChooseUs = () => {
       icon: Award,
       title: "15+ Years of Excellence",
       description:
-        "Over a decade and a half of proven expertise in water treatment industry, serving hundreds of satisfied clients across India.",
+        "Over a decade and a half of proven expertise serving clients across India.",
     },
     {
       icon: Shield,
       title: "Quality Assurance",
       description:
-        "ISO certified products manufactured using premium materials and adhering to international quality standards. Each product undergoes rigorous testing.",
+        "ISO-certified products with strict quality checks and premium materials.",
     },
     {
       icon: Users,
       title: "Expert Team",
       description:
-        "Our team comprises experienced engineers, technicians, and consultants who are dedicated to providing the best solutions for your needs.",
+        "Experienced engineers, technicians, and consultants dedicated to solutions.",
     },
     {
       icon: Wrench,
       title: "Comprehensive Service",
       description:
-        "From consultation to installation, commissioning, and maintenance - we provide end-to-end support throughout the project lifecycle.",
+        "End-to-end service from consultation to installation and maintenance.",
     },
     {
       icon: TrendingUp,
       title: "Innovative Technology",
       description:
-        "We continuously invest in R&D to bring the latest and most efficient water treatment technologies to our clients.",
+        "We invest in R&D to deliver the latest efficient technologies.",
     },
     {
       icon: HeartHandshake,
-      title: "Customer-Centric Approach",
+      title: "Customer-Centric",
       description:
-        "Your satisfaction is our priority. We work closely with you to understand requirements and deliver customized solutions.",
+        "We prioritize understanding your needs and delivering tailored solutions.",
     },
     {
       icon: Leaf,
-      title: "Environmental Responsibility",
+      title: "Environmental Friendly",
       description:
-        "All our solutions are designed with environmental sustainability in mind, helping you reduce your ecological footprint.",
+        "Solutions designed for sustainability and reduced environmental footprint.",
     },
     {
       icon: CheckCircle2,
       title: "Proven Track Record",
-      description:
-        "Successfully completed 500+ projects across residential, commercial, industrial, and municipal sectors.",
+      description: "500+ successful projects across all sectors.",
     },
   ];
 
   const advantages = [
-    "Customized solutions tailored to your specific requirements",
-    "Competitive pricing without compromising on quality",
-    "Quick turnaround time from order to delivery",
-    "Pan-India service network for prompt support",
-    "Energy-efficient systems that reduce operational costs",
-    "Compliance with all statutory and environmental regulations",
-    "Detailed project documentation and training",
+    "Customized solutions based on your exact requirements",
+    "Competitive pricing with quality assurance",
+    "Quick order-to-delivery timeline",
+    "Pan-India support network",
+    "Energy-efficient systems to reduce costs",
+    "Compliant with environmental regulations",
+    "Complete documentation and training",
     "Long-term spare parts availability",
   ];
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section with Image */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div 
+      {/* HERO SECTION */}
+      <section className="relative py-20 md:py-24 overflow-hidden">
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${teamWorking})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-primary/70" />
+
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <span className="inline-block px-4 py-2 bg-secondary/20 backdrop-blur-sm rounded-full text-secondary text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-3">
               Why Bharat H2O
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">Why Choose Bharat H2O?</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">
+              Why Choose Bharat H2O?
+            </h1>
             <p className="text-lg text-primary-foreground/90">
-              Discover what makes us the preferred choice for water treatment solutions across India
+              Trusted partner for reliable, efficient and innovative water
+              treatment solutions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Reasons */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* WHAT SETS US APART */}
+      <section className="py-12 md:py-16 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-secondary font-semibold">Our Strengths</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">What Sets Us Apart</h2>
+          <div className="text-center mb-10">
+            <span className="text-secondary font-semibold uppercase tracking-wide">
+              Our Strengths
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">
+              What Sets Us Apart
+            </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((reason, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-all hover:shadow-lg group">
-                <CardHeader>
-                  <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <reason.icon className="h-6 w-6 text-white" />
+              <Card
+                key={index}
+                className="border rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300 group text-center"
+              >
+                <CardHeader className="p-0 mb-3 flex flex-col items-center">
+                  <div className="h-12 w-12 rounded-lg gradient-primary flex items-center justify-center mb-2 group-hover:scale-110 transition">
+                    <reason.icon className="text-white h-6 w-6" />
                   </div>
-                  <CardTitle className="text-lg">{reason.title}</CardTitle>
+                  <CardTitle className="text-lg font-semibold">
+                    {reason.title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{reason.description}</p>
+                <CardContent className="p-0 text-sm text-muted-foreground">
+                  {reason.description}
                 </CardContent>
               </Card>
             ))}
@@ -116,72 +139,90 @@ const WhyChooseUs = () => {
         </div>
       </section>
 
-      {/* Quality Image Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <img 
-                src={qualityAssurance} 
-                alt="Quality testing in laboratory" 
-                className="rounded-2xl shadow-2xl w-full"
-              />
+          {/* CENTERED HEADING */}
+          <div className="text-center mb-10">
+            <span className="text-secondary uppercase tracking-wide font-semibold block">
+              Quality First
+            </span>
+
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">
+              Additional Advantages
+            </h2>
+          </div>
+
+          {/* 4 + 4 GRID BOXES */}
+          <div className="grid md:grid-cols-2 gap-6 ">
+            {advantages.map((adv, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-background p-4 rounded-lg shadow-sm"
+              >
+                <CheckCircle2 className="h-6 w-6 text-secondary mt-1" />
+                <p className="text-foreground text-sm">{adv}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SUSTAINABILITY SECTION */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto  px-6 md:px-12 lg:px-20">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* TEXT */}
+            <div className="space-y-5 order-2 lg:order-1">
+              <span className="text-secondary uppercase font-semibold">
+                Sustainability
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold">Our Commitment</h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We deliver reliable, energy-efficient and eco-friendly water
+                treatment solutions.
+              </p>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Choosing us means partnering with a team that prioritizes
+                quality and sustainability.
+              </p>
+
+              <Button asChild className="gradient-primary mt-2">
+                <NavLink to="/enquiry">Get Started Today</NavLink>
+              </Button>
             </div>
-            <div className="space-y-6">
-              <span className="text-secondary font-semibold">Quality First</span>
-              <h2 className="text-3xl md:text-4xl font-bold">Additional Advantages</h2>
-              <div className="space-y-4">
-                {advantages.map((advantage, index) => (
-                  <div key={index} className="flex items-start gap-3 bg-background rounded-lg p-4 shadow-sm">
-                    <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-0.5" />
-                    <p className="text-foreground">{advantage}</p>
-                  </div>
-                ))}
+
+            {/* IMAGE */}
+            <div className="order-1 lg:order-2">
+              <div className="w-full h-[320px] md:h-[380px] lg:h-[350px] rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={ecoPlant}
+                  alt="Eco-friendly"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sustainability Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 order-2 lg:order-1">
-              <span className="text-secondary font-semibold">Sustainability</span>
-              <h2 className="text-3xl md:text-4xl font-bold">Our Commitment</h2>
-              <p className="text-lg text-muted-foreground">
-                At Bharat H2O Solutions, we are committed to delivering excellence in every project. Our goal is not just
-                to provide equipment, but to build long-term partnerships with our clients. We stand by our products and
-                services, ensuring that you receive the best value for your investment.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                When you choose us, you're choosing a partner who cares about your success and is dedicated to providing
-                sustainable water treatment solutions that make a real difference.
-              </p>
-              <Button asChild className="gradient-primary">
-                <NavLink to="/enquiry">Get Started Today</NavLink>
-              </Button>
-            </div>
-            <div className="order-1 lg:order-2">
-              <img 
-                src={ecoPlant} 
-                alt="Eco-friendly water treatment" 
-                className="rounded-2xl shadow-2xl w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-secondary text-secondary-foreground">
+      {/* CTA SECTION */}
+      <section className="py-12 md:py-16 gradient-secondary text-secondary-foreground">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Experience the Difference?</h2>
-          <p className="text-lg mb-8 text-secondary-foreground/90 max-w-2xl mx-auto">
-            Join hundreds of satisfied clients who trust Bharat H2O for their water treatment needs.
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+            Ready to Experience the Difference?
+          </h2>
+          <p className="text-lg mb-6 max-w-xl mx-auto text-secondary-foreground/90">
+            Join hundreds of satisfied clients who trust Bharat H2O.
           </p>
-          <Button asChild size="lg" variant="outline" className="border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-white text-green-600 border border-green-600 hover:bg-green-600 hover:text-white"
+          >
             <NavLink to="/contact">Contact Our Team</NavLink>
           </Button>
         </div>

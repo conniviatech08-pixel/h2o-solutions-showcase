@@ -25,6 +25,7 @@ All colors MUST be HSL.
 
     /* Green secondary - eco-friendly, sustainability */
     --secondary: 145 75% 42%;
+     
     --secondary-foreground: 0 0% 100%;
     --secondary-light: 145 75% 55%;
     
@@ -112,3 +113,13 @@ All colors MUST be HSL.
     background: var(--gradient-hero);
   }
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

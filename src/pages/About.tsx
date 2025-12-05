@@ -1,146 +1,164 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { Target, Eye, Award, CheckCircle, Users, Clock, Building } from "lucide-react";
+import CountUp from "@/components/CountUp";
+import { Target, Eye, Award, CheckCircle } from "lucide-react";
 import aboutOffice from "@/assets/about-office.webp";
 import qualityAssurance from "@/assets/quality-assurance.webp";
 import teamWorking from "@/assets/team-working.webp";
 
 const About = () => {
-  const stats = [
-    { icon: Clock, value: "15+", label: "Years Experience" },
-    { icon: Users, value: "300+", label: "Happy Clients" },
-    { icon: Building, value: "500+", label: "Projects Completed" },
-    { icon: Award, value: "ISO", label: "9001:2015 Certified" },
-  ];
-
   return (
     <div className="flex flex-col">
-      {/* Hero Section with Background */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div 
+      {/* HERO SECTION */}
+      <section className="relative py-12 md:py-16 overflow-hidden">
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${aboutOffice})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <span className="inline-block px-4 py-2 bg-secondary/20 backdrop-blur-sm rounded-full text-secondary text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-2">
               About Us
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">About Bharat H2O Solutions</h1>
-            <p className="text-lg text-primary-foreground/90">
-              Your trusted partner in water and wastewater treatment solutions since 2008. We combine advanced technology with expert engineering to deliver sustainable solutions.
+
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary-foreground">
+              About Bharat H2O Solutions
+            </h1>
+
+            <p className="text-base text-primary-foreground/90 leading-relaxed">
+              Your trusted partner in water and wastewater treatment solutions
+              since 2008.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-8 bg-secondary">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center flex flex-col items-center gap-2">
-                <stat.icon className="h-8 w-8 text-secondary-foreground/80" />
-                <div className="text-2xl md:text-3xl font-bold text-secondary-foreground">{stat.value}</div>
-                <div className="text-secondary-foreground/80 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Overview with Image */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+      {/* COMPANY OVERVIEW */}
+      <section className="py-10 md:py-14 bg-background">
+        <div className="container mx-auto  px-6 md:px-12 lg:px-20">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
               <span className="text-secondary font-semibold">Our Story</span>
-              <h2 className="text-3xl md:text-4xl font-bold">Leading the Water Treatment Industry</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Leading the Water Industry
+              </h2>
+
+              <div className="space-y-3 text-muted-foreground text-xlleading-relaxed">
                 <p>
-                  <strong className="text-foreground">Bharat H2O Solutions Private Limited</strong> is a leading manufacturer and supplier of
-                  comprehensive water and wastewater treatment solutions in India. With over 15 years of industry
-                  experience, we have established ourselves as a trusted name in the water treatment sector.
+                  <strong className="text-foreground">
+                    Bharat H2O Solutions Pvt. Ltd.
+                  </strong>{" "}
+                  is a leading manufacturer & supplier of water and wastewater
+                  treatment systems.
                 </p>
+
                 <p>
-                  Our company specializes in designing, manufacturing, and installing a wide range of water treatment
-                  plants, sewage treatment plants, effluent treatment plants, and related equipment. We serve diverse
-                  sectors including residential, commercial, industrial, and municipal clients.
+                  We design and install water treatment plants, STP, ETP and
+                  industrial purification systems.
                 </p>
+
                 <p>
-                  Located in Mumbai, Maharashtra, we combine advanced technology with expert engineering to deliver
-                  sustainable and cost-effective solutions.
+                  Based in Mumbai, we deliver sustainable and cost-effective
+                  engineering solutions.
                 </p>
               </div>
+
               <Button asChild className="gradient-primary">
                 <NavLink to="/contact">Get In Touch</NavLink>
               </Button>
             </div>
+
             <div className="relative">
-              <img 
-                src={teamWorking} 
-                alt="Our team at work" 
-                className="rounded-2xl shadow-2xl w-full"
+              <img
+                src={teamWorking}
+                alt="Our team at work"
+                className="rounded-2xl shadow-xl w-full"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      {/* MISSION - VISION - VALUES */}
+      <section className="py-10 md:py-14 bg-muted/50">
         <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-secondary font-semibold">Our Foundation</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">Mission, Vision & Values</h2>
+          <div className="text-center mb-8">
+            <span className="text-secondary font-semibold uppercase tracking-wide">
+              Our Foundation
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">
+              Mission, Vision & Values
+            </h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
-              <CardHeader>
-                <div className="h-14 w-14 rounded-xl gradient-primary flex items-center justify-center mb-4">
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6 w-full max-w-5xl mx-auto">
+            {/* Mission */}
+            <Card className="relative border rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader className="flex flex-col items-center text-center p-5">
+                <div className="h-14 w-14 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center mb-3 shadow-md">
                   <Target className="h-7 w-7 text-white" />
                 </div>
-                <CardTitle className="text-xl">Our Mission</CardTitle>
+                <CardTitle className="text-xl font-semibold text-gray-800">
+                  Our Mission
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  To provide innovative, sustainable, and cost-effective water treatment solutions that ensure clean
-                  water for all, while protecting the environment for future generations.
+
+              <CardContent className="p-5">
+                <p className="text-gray-600 text-sm">
+                  To provide sustainable and innovative water treatment
+                  solutions.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
-              <CardHeader>
-                <div className="h-14 w-14 rounded-xl gradient-secondary flex items-center justify-center mb-4">
+            {/* Vision */}
+            <Card className="relative border rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <CardHeader className="flex flex-col items-center text-center p-5">
+                <div className="h-14 w-14 rounded-full bg-gradient-to-r from-purple-500 to-pink-400 flex items-center justify-center mb-3 shadow-md">
                   <Eye className="h-7 w-7 text-white" />
                 </div>
-                <CardTitle className="text-xl">Our Vision</CardTitle>
+                <CardTitle className="text-xl font-semibold text-gray-800">
+                  Our Vision
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  To be the most trusted and preferred water treatment company in India, recognized for our quality,
-                  innovation, and commitment to environmental sustainability.
+
+              <CardContent className="p-5">
+                <p className="text-gray-600 text-sm">
+                  To become India’s most trusted water treatment company.
                 </p>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
-              <CardHeader>
-                <div className="h-14 w-14 rounded-xl gradient-hero flex items-center justify-center mb-4">
+          {/* Values */}
+          <div className="flex justify-center">
+            <Card className="w-full md:w-80 border rounded-xl transition-all hover:scale-105 hover:shadow-xl">
+              <CardHeader className="flex flex-col items-center text-center p-5">
+                <div className="h-14 w-14 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center mb-3 shadow-md">
                   <Award className="h-7 w-7 text-white" />
                 </div>
-                <CardTitle className="text-xl">Our Values</CardTitle>
+                <CardTitle className="text-xl font-semibold text-gray-800">
+                  Our Values
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-secondary" /> Quality Excellence</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-secondary" /> Customer Satisfaction</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-secondary" /> Environmental Responsibility</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-secondary" /> Innovation & Technology</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-secondary" /> Integrity & Trust</li>
+
+              <CardContent className="p-5">
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  {[
+                    "Quality Excellence",
+                    "Customer Satisfaction",
+                    "Environmental Responsibility",
+                    "Innovation & Technology",
+                    "Integrity & Trust",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-blue-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -148,34 +166,54 @@ const About = () => {
         </div>
       </section>
 
-      {/* Quality Section with Image */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* QUALITY SECTION */}
+      <section className="py-10 md:py-14 bg-background">
+        <div className="container mx-auto  px-6 md:px-12 lg:px-20">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* IMAGE */}
             <div className="order-2 lg:order-1">
-              <img 
-                src={qualityAssurance} 
-                alt="Quality assurance and testing" 
-                className="rounded-2xl shadow-2xl w-full"
+              <img
+                src={qualityAssurance}
+                alt="Quality assurance"
+                className="rounded-2xl shadow-xl w-full h-[300px] md:h-[400px] object-cover hover:scale-105 transition-transform"
               />
             </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <span className="text-secondary font-semibold">Quality Commitment</span>
-              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Us</h2>
-              <div className="grid gap-6">
+
+            {/* CONTENT */}
+            <div className="order-1 lg:order-2 space-y-4">
+              <span className="text-secondary font-semibold uppercase">
+                Quality Commitment
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold">Why Choose Us</h2>
+
+              <div className="space-y-3">
                 {[
-                  { title: "Expertise & Experience", desc: "Over 15 years of proven track record in delivering successful water treatment projects across various industries and applications." },
-                  { title: "Quality Products", desc: "All our products are manufactured using high-grade materials and comply with international quality standards and certifications." },
-                  { title: "Custom Solutions", desc: "We design and manufacture customized solutions tailored to meet your specific requirements and site conditions." },
-                  { title: "After-Sales Support", desc: "Comprehensive after-sales service including installation, commissioning, maintenance, and technical support." },
+                  {
+                    title: "Expertise & Experience",
+                    desc: "Over 15 years of industry-leading solutions.",
+                  },
+                  {
+                    title: "Quality Products",
+                    desc: "Built using durable, high-grade materials.",
+                  },
+                  {
+                    title: "Custom Solutions",
+                    desc: "Tailored systems based on your requirements.",
+                  },
+                  {
+                    title: "After-Sales Support",
+                    desc: "Installation, maintenance & technical support.",
+                  },
                 ].map((item, index) => (
-                  <div key={index} className="flex gap-4">
-                    <div className="h-10 w-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex gap-3">
+                    <div className="h-9 w-9 rounded-lg bg-secondary/20 flex items-center justify-center">
                       <CheckCircle className="h-5 w-5 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <h3 className="font-semibold">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -185,18 +223,21 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-hero text-primary-foreground">
+      {/* CTA */}
+      <section className="py-12 md:py-16 gradient-hero text-primary-foreground">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Partner With Us?</h2>
-          <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve your water treatment goals. Our experts are ready to provide customized solutions for your needs.
+          <h2 className="text-3xl font-bold mb-3">Ready to Partner With Us?</h2>
+
+          <p className="text-base mb-6 max-w-xl mx-auto opacity-90">
+            Let’s work together to build sustainable and effective water
+            treatment solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" variant="secondary">
               <NavLink to="/enquiry">Request Quote</NavLink>
             </Button>
-            <Button asChild size="lg" className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30">
+            <Button asChild size="lg" variant="secondary">
               <NavLink to="/contact">Contact Us</NavLink>
             </Button>
           </div>
