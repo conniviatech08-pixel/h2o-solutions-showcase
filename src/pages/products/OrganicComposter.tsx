@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import automatic from "@/assets/automaticorganic.webp";
 import manualorganic from "@/assets/manual-organic.webp";
-import Organic from "@/assets/Organic.webp";
 import Organicbg from "@/assets/Organicbg.jpg";
 import { Leaf, Recycle, Timer, Award } from "lucide-react";
 
