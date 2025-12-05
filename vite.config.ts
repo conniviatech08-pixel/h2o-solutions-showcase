@@ -9,7 +9,9 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-   base: "/h2o-solutions-showcase/",
+  build: {
+    outDir: "dist"
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   
   resolve: {
