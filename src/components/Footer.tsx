@@ -67,6 +67,11 @@ const Footer = () => {
       Effluent Treatment Plants
     </NavLink>
   </li>
+   <li>
+    <NavLink to="/products/pressure-sand-filter" className="hover:text-primary">
+      Pressure Sand Filter
+    </NavLink>
+  </li>
   <li>
     <NavLink to="/products/organic-composter" className="hover:text-primary">
       Organic Waste Composters
@@ -77,6 +82,12 @@ const Footer = () => {
       Swimming Pool Filters
     </NavLink>
   </li>
+  <li>
+    <NavLink to="/products/water-softening" className="hover:text-primary">
+      Water Softening
+    </NavLink>
+  </li>
+ 
 </ul>
 
             {/* <ul className="space-y-2 text-sm text-muted-foreground">
