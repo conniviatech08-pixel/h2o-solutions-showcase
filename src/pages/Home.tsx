@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import CountUp from "@/components/CountUp";
 import pressureSandFilter from "@/assets/pressuresand1.webp";
-import swimmingPoolFilter from "@/assets/swimming-pool-filter.webp";
+import swimmingPoolFilter from "@/assets/swimming2.webp";
 import waterTreatmentPlant from "@/assets/water-treatment-plant.webp";
 import organicComposter from "@/assets/organic-composter.webp";
 import effluentTreatment from "@/assets/effluent-treatment.webp";
