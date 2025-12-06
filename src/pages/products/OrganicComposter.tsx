@@ -51,7 +51,7 @@ const OrganicComposter = () => {
 
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">
-            Organic Waste Composters
+            Organic Waste Composterssss
           </h1>
           <p className="text-lg relative z-10 text-white/90 max-w-2xl mx-auto">
             Prominent & Leading Manufacturer from Mumbai, we offer mild steel green organic waste composter, mild steel organic waste composter, automatic organic waste composter, manual organic waste composter, in-vessel organic waste composter and stainless steel organic waste composter.
