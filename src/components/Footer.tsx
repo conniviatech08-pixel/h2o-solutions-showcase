@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { NavLink } from "./NavLink";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/file.png";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Bharat H2O Solutions" className="h-16 w-auto" />
+              <img src={logo} alt="Bharat H2O Solutions" className="h-10 w-auto" />
               {/* <div className="flex flex-col">
                 <span className="text-lg font-bold">Bharat H2O</span>
                 <span className="text-xs text-muted-foreground">Water Solutions</span>
