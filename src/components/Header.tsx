@@ -187,7 +187,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/file.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -234,7 +234,7 @@ const Header = () => {
       <nav className="container flex h-20 items-center justify-between">
         {/* LOGO */}
         <NavLink to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Bharat H2O Solutions" className="h-16 w-auto" />
+          <img src={logo} alt="Bharat H2O Solutions" className="h-10 w-auto" />
         </NavLink>
 
         {/* DESKTOP NAVIGATION */}
@@ -338,9 +338,9 @@ const Header = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-10 w-10"/>
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-10 w-10" />
           )}
         </Button>
       </nav>
