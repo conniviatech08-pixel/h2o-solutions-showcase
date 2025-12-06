@@ -129,7 +129,7 @@ const Networks = () => {
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: `url(${aboutOffice})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/60" />
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="container relative z-10 px-4">
           <div className="max-w-xl">
@@ -262,7 +262,7 @@ const Networks = () => {
 
             <button
               onClick={scrollLeft}
-              className="absolute -bottom-16 right-20 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center"
+              className="absolute -bottom-14 right-20 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center"
             >
               <ChevronLeft size={20} />
             </button>
@@ -270,7 +270,7 @@ const Networks = () => {
             {/* Right Arrow */}
             <button
               onClick={scrollRight}
-              className="absolute -bottom-16 right-4 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center"
+              className="absolute -bottom-14 right-4 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center"
             >
               <ChevronRight size={20} />
             </button>

@@ -39,7 +39,9 @@ const OrganicComposter = () => {
   return (
     <div className="flex flex-col">
       {/* HERO SECTION */}
-      <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white">
+      {/* <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white"> */}
+      <section className="relative h-[380px] md:h-[420px] flex items-center justify-center text-white">
+
         <div className="absolute inset-0 -z-10">
           <img
             src={Organicbg}
@@ -51,9 +53,9 @@ const OrganicComposter = () => {
 
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">
-            Organic Waste Composterssss
+            Organic Waste Composters
           </h1>
-          <p className="text-lg relative z-10 text-white/90 max-w-2xl mx-auto">
+          <p className="text-md sm:text-lg md:text-3xl relative z-10 text-white/90 max-w-2xl mx-auto">
             Prominent & Leading Manufacturer from Mumbai, we offer mild steel green organic waste composter, mild steel organic waste composter, automatic organic waste composter, manual organic waste composter, in-vessel organic waste composter and stainless steel organic waste composter.
           </p>
         </div>

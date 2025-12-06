@@ -110,7 +110,7 @@ const Products = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroWater})` }}
         />
-        <div className="absolute inset-0 bg-primary/85" />
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="container relative z-10 px-6 md:px-10">
           <div className="max-w-2xl">

@@ -10,11 +10,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Bharat H2O Solutions" className="h-12 w-auto" />
-              <div className="flex flex-col">
+              <img src={logo} alt="Bharat H2O Solutions" className="h-16 w-auto" />
+              {/* <div className="flex flex-col">
                 <span className="text-lg font-bold">Bharat H2O</span>
                 <span className="text-xs text-muted-foreground">Water Solutions</span>
-              </div>
+              </div> */}
             </div>
             <p className="text-sm text-muted-foreground">
               Leading provider of water and wastewater treatment solutions in India.
@@ -52,12 +52,40 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 text-sm font-semibold">Our Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
+  <li>
+    <NavLink to="products/water-treatment" className="hover:text-primary">
+      Water Treatment Plants
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/products/sewage-treatment" className="hover:text-primary">
+      Sewage Treatment Plants
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/products/effluent-treatment" className="hover:text-primary">
+      Effluent Treatment Plants
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/products/organic-composter" className="hover:text-primary">
+      Organic Waste Composters
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/products/swimming-pool" className="hover:text-primary">
+      Swimming Pool Filters
+    </NavLink>
+  </li>
+</ul>
+
+            {/* <ul className="space-y-2 text-sm text-muted-foreground">
               <li>Water Treatment Plants</li>
               <li>Sewage Treatment Plants</li>
               <li>Effluent Treatment Plants</li>
               <li>Organic Waste Composters</li>
               <li>Swimming Pool Filters</li>
-            </ul>
+            </ul> */}
           </div>
 
           {/* Contact Info */}

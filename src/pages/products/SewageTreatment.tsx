@@ -42,7 +42,9 @@ const SewageTreatment = () => {
   return (
     <div className="flex flex-col">
       {/* HERO SECTION */}
-      <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white">
+      {/* <section className="relative h-[300px] md:h-[380px] flex items-center justify-center text-white"> */}
+      <section className="relative h-[380px] md:h-[420px] flex items-center justify-center text-white">
+
         <div className="absolute inset-0 -z-10">
           <img
             src={stpbg1}

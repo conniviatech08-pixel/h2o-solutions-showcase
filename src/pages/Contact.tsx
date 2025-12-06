@@ -60,7 +60,7 @@ const Contact = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${customerSupport})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="container relative z-10">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-4">

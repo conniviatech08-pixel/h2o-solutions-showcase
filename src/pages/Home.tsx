@@ -113,7 +113,7 @@ const Home = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroWater})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl space-y-6">
             <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
@@ -132,7 +132,7 @@ const Home = () => {
               <Button asChild size="lg" variant="secondary" className="text-lg">
                 <NavLink to="/products">View Products</NavLink>
               </Button>
-              {/* <Button asChild size="lg" className="text-lg bg-green/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30"> */}
+              
               <Button asChild size="lg" variant="secondary" className="text-lg">
                 <NavLink to="/enquiry">Get Free Quote</NavLink>
               </Button>

@@ -16,7 +16,7 @@ const About = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${aboutOffice})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="container relative z-10">
           <div className="max-w-2xl">
@@ -106,7 +106,7 @@ const About = () => {
                 </CardTitle>
               </CardHeader>
 
-              <CardContent className="p-5">
+              <CardContent className="pt-2 px-8 pb-8 text-center">
                 <p className="text-gray-600 text-sm">
                   To provide sustainable and innovative water treatment
                   solutions.
@@ -125,7 +125,7 @@ const About = () => {
                 </CardTitle>
               </CardHeader>
 
-              <CardContent className="p-5">
+              <CardContent className="pt-2 px-8 pb-8 text-center">
                 <p className="text-gray-600 text-sm">
                   To become India’s most trusted water treatment company.
                 </p>
@@ -145,7 +145,7 @@ const About = () => {
                 </CardTitle>
               </CardHeader>
 
-              <CardContent className="p-5">
+              <CardContent className="pt-2 px-8 pb-8 text-center">
                 <ul className="space-y-2 text-gray-700 text-sm">
                   {[
                     "Quality Excellence",
